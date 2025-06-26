@@ -9,4 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function fetchDrivers() {
+  fetch('http://localhost:3000/drivers')
+    .then(res => res.json())
+    .then(data => {
+      window.allDrivers = data;
+      renderDrivers(data);
+    });
+}
 
