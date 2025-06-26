@@ -62,4 +62,17 @@ function renderDrivers(drivers) {
     container.appendChild(card);
   });
 
+  function openModal(d){
+    document.getElementById('modal-img').src = d.image;
+    document.getElementById('modal-name').textContent = d.name;
+    document.getElementById('modal-team').textContent = d.team;
+    document.getElementById('modal-nationality').textContent = d.nationality;
+    document.getElementById('modal-points').textContent = d.points;
+    document.getElementById('modal-wins').textContent = d.wins;
+    document.getElementById('modal-championships').textContent = d.championships;
+    document.getElementById('modal-bio').textContent = d.bio || 'No biography available.';
+    document.getElementById('modal-link').href = d.link || "#";
+    document.getElementById('modal').classList.remove('hidden');
+    document.getElementById('modal-close').onclick = () => document.getElementById('modal').classList.add('hidden');
+  }
 }
