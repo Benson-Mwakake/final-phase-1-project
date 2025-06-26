@@ -18,3 +18,18 @@ function fetchDrivers() {
     });
 }
 
+function getTeamColor(team) {
+  const teamColors = {
+    "McLaren": "#ff8700",
+    "Mercedes": "#00d7b6",
+    "Ferrari": "#ed1131",
+    "Red Bull Racing": "#2270e3",
+    "Williams": "#eef1f7",
+    "Haas": "#3d3e40",
+    "Racing Bulls": "#2977de",
+    "Alpine":"#db90b1",
+    "Sauber": "#b6f3b7",
+    "Aston Martin": "#229971",
+  };
+  return teamColors[team] || "#e10600";
+}
