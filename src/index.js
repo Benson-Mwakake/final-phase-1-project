@@ -33,3 +33,33 @@ function getTeamColor(team) {
   };
   return teamColors[team] || "#e10600";
 }
+
+function renderDrivers(drivers) {
+    const container = document.getElementById("driver-container");
+    container.innerHTML = '';
+
+    drivers.forEach(driver => {
+        const card = document.createElement('div');
+        card.className = "driver-card";
+        card.style.borderLeft = `5px solid ${getTeamColor(driver.team)}`;
+
+        card.innerHTML = `
+        <img src="${driver.image}" alt="${driver.name}">
+        <div class="extra">
+          <p>${driver.name}</p>
+          <p><strong>Team:</strong> ${driver.team}</p>
+          <p><strong>points:</strong> ${driver.points}</p>
+          <p><strong>Wins:</strong> ${driver.wins}</p>
+          <p><strong>Nationality:</strong> ${driver.nationality}</p>
+          <button class="toggle-stats">More info</button>
+        </div>
+        `;
+
+        card.querySelector('.toggle-stats').addEventListener('click', () => {
+      openModal(driver);
+    });
+
+    container.appendChild(card);
+  });
+
+}
