@@ -76,3 +76,22 @@ function renderDrivers(drivers) {
     document.getElementById('modal-close').onclick = () => document.getElementById('modal').classList.add('hidden');
   }
 }
+
+function filterDrivers() {
+  const searchTerm = document.getElementById('search-input').value.toLowerCase();
+  const team = document.getElementById('team-filter').value;
+  const sortBy = document.getElementById('sort-by').value;
+
+  let filtered = window.allDrivers.filter(driver =>
+    driver.name.toLowerCase().includes(searchTerm) &&
+    (team === '' || driver.team === team)
+  );
+
+  if (sortBy === "wins") {
+    filtered.sort((a, b) => b.wins - a.wins);
+  } else if (sortBy === "points") {
+    filtered.sort((a, b) => b.points - a.points);
+  }
+
+  renderDrivers(filtered);
+}
