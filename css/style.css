@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --f1-red: #e10600;
+  --f1-white: #f8f8f8;
+  --f1-black: #0f0f0f;
+
+  --font-main: 'Inter', sans-serif;
+  --font-accent: 'Titillium Web', sans-serif;
+
+  --bg-dark: #121212;
+  --bg-light: #ffffff;
+  --card-dark: #1c1c1c;
+  --card-light: #f2f2f2;
+
+  --text-dark: #0f0f0f;
+  --text-light: #eaeaea;
+  --text-muted: #bbbbbb;
+
+  --btn-primary: #e10600;
+  --btn-hover: #ff2f2f;
+
+  --accent-light: #333333;
+  --accent-dark: #444;
+
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-hard: 0 0 20px rgba(255, 0, 0, 0.2);
+
+  --team-redbull: #1e41ff;
+  --team-mercedes: #00d2be;
+  --team-ferrari: #dc0000;
+  --team-mclaren: #ff8700;
+  --team-astonmartin: #006f62;
+  --team-alpine: #0090ff;
+  --team-williams: #005aff;
+  --team-haas: #b6babd;
+  --team-sauber: #52e252;
+  --team-rb: #00205b;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family:  'Inter', sans-serif;
+}
+
+.heading{
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    background-color: var(--accent-light);
+}
+h1 {
+    color: var(--f1-red);
+}
+
+.controls {
+    background-color: #1a1a1a;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+input, select,button {
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--btn-primary);
+    background-color: #222;
+    color: white;
+    font-size: 15px;
+}
+
+button {
+    background-color: var(--btn-primary);
+}
+button:hover{
+    background-color: var(--btn-hover);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: #111;
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(238, 68, 68, 0.3);
+}
+
+#modal-close {
+    position: absolute;
+    top: 1px;
+    right: 7px;
+    font-size: 28px;
+    color: var(--bg-light);
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+#modal-link{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--f1-red);
+    font-weight: bold;
+}
+
+.modal.hidden{
+    display: none;
+}
+
+
+#driver-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.driver-card {
+  background-color: var(--card-dark);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.driver-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+.driver-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--f1-red);
+}
+
+.driver-card h2 {
+  margin: 10px 0 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.driver-card p {
+  margin: 6px 16px;
+  font-size: 14px;
+}
+
+button.toggle-stats {
+  margin: 10px 16px 16px;
+  background-color: var(--btn-primary);
+  border-radius: 6px;
+  width: calc(100% - 32px);
+  cursor: pointer;
+}
+
+button.toggle-stats:hover{
+  background-color: var(--accent-light);
+}
+
+.extra {
+  margin: 8px 16px 16px;
+  font-size: 14px;
+  color: #ccc;
+}
