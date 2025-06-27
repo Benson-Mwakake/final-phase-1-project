@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchDrivers() {
-  fetch('https://render-api-ie87.onrender.com')
+  fetch('https://render-api-ie87.onrender.com/drivers')
     .then(res => res.json())
     .then(data => {
       window.allDrivers = data;
